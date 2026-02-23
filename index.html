@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devraj Mondal | Data Analyst Portfolio</title>
+    <style>
+        :root {
+            --primary: #2563eb;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --bg-light: #f8fafc;
+            --card-bg: #ffffff;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
+        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+        .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Typography & Links */
+        h1, h2, h3 { color: #0f172a; margin-bottom: 10px; }
+        a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        a:hover { text-decoration: underline; }
+        
+        /* Header / Hero Section */
+        header { padding: 80px 0 50px; border-bottom: 1px solid #e2e8f0; text-align: center; }
+        header h1 { font-size: 2.5rem; letter-spacing: -0.5px; }
+        header p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 20px; }
+        .social-links a { margin: 0 10px; padding: 8px 16px; border: 1px solid var(--primary); border-radius: 5px; display: inline-block; transition: 0.3s; }
+        .social-links a:hover { background: var(--primary); color: white; text-decoration: none; }
+
+        /* Sections */
+        section { padding: 50px 0; border-bottom: 1px solid #e2e8f0; }
+        section h2 { font-size: 1.8rem; margin-bottom: 30px; border-left: 4px solid var(--primary); padding-left: 10px; }
+
+        /* Skills Grid */
+        .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
+        .skill-category { background: var(--card-bg); padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
+        .skill-category h3 { font-size: 1.1rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 10px; }
+        .skill-category ul { list-style-type: none; }
+        .skill-category li { margin-bottom: 5px; color: var(--text-muted); }
+        .skill-category li::before { content: "• "; color: var(--primary); font-weight: bold; }
+
+        /* Experience & Education */
+        .timeline-item { background: var(--card-bg); padding: 25px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        .timeline-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15px; flex-wrap: wrap; }
+        .timeline-header h3 { margin: 0; }
+        .date { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+        .timeline-item ul { margin-left: 20px; color: var(--text-muted); }
+        .timeline-item li { margin-bottom: 8px; }
+
+        /* Projects Grid */
+        .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
+        .project-card { background: var(--card-bg); padding: 25px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
+        .project-tech { font-size: 0.8rem; color: var(--primary); font-weight: bold; margin-bottom: 15px; letter-spacing: 0.5px; }
+        .project-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
+        .project-links a { margin-right: 15px; font-size: 0.9rem; }
+
+        /* Footer */
+        footer { padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <h1>Devraj Mondal</h1>
+            <p>Data Analyst & Business Intelligence Professional</p>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/devrajmondal5/" target="_blank">LinkedIn</a>
+                <a href="https://github.com/devraj-mondal" target="_blank">GitHub</a>
+                <a href="mailto:mondaldevraj996@gmail.com">Contact Me</a>
+            </div>
+        </div>
+    </header>
+
+    <div class="container">
+        
+        <section id="about">
+            <h2>About Me</h2>
+            <p>I am a data-driven professional with a B.Tech in Computer Science from Haldia Institute of Technology (CGPA: 8.53). I specialize in transforming complex datasets into clear, actionable business strategies using Power BI, SQL, and Advanced Excel. With an analytical mindset, I aim to uncover the stories hidden within data to solve organizational challenges, optimize operational efficiency, and drive strategic decision-making in the modern economic landscape.</p>
+        </section>
+
+        <section id="skills">
+            <h2>Technical Core Competencies</h2>
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <h3>Data Visualization</h3>
+                    <ul>
+                        <li>Power BI Desktop & Service</li>
+                        <li>Advanced Excel</li>
+                        <li>Data Storytelling</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Data Processing</h3>
+                    <ul>
+                        <li>SQL & MySQL</li>
+                        <li>Power Query (M-Query)</li>
+                        <li>DAX</li>
+                        <li>Data Cleaning & Modelling</li>
+                    </ul>
+                </div>
+                <div class="skill-category">
+                    <h3>Programming</h3>
+                    <ul>
+                        <li>Python</li>
+                        <li>PHP</li>
+                        <li>CSS & HTML</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="experience">
+            <h2>Professional Experience</h2>
+            <div class="timeline-item">
+                <div class="timeline-header">
+                    <div>
+                        <h3>Associate Engineer</h3>
+                        <p style="color: var(--primary); font-weight: 500;">Nagarro, Gurugram</p>
+                    </div>
+                    <span class="date">09/2022 - 09/2023</span>
+                </div>
+                <ul>
+                    <li>Streamlined data validation, transformation, and exploratory analysis using Excel and SQL, boosting report accuracy and usability by 25%-30%.</li>
+                    <li>Implemented Power BI report migration with advanced visualizations, pinpointed and documented bugs, improving report accuracy by 30%.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="projects">
+            <h2>Featured Projects</h2>
+            <div class="projects-grid">
+                
+                <div class="project-card">
+                    <h3>Business Insights 360 (E-Commerce)</h3>
+                    <div class="project-tech">POWER BI • SQL • DAX • EXCEL</div>
+                    <p>Engineered an enterprise-wide Power BI dashboard for Sales, Finance, Supply Chain, Executive, and Marketing teams, integrating 1M+ records. Optimized performance with DAX Studio, lowering storage by 30% and augmenting speed by 5%. Drove insights leading to a projected 10% revenue uplift.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/devraj-mondal" target="_blank">View GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Telecom 5G Insights</h3>
+                    <div class="project-tech">EXCEL • POWER BI • DAX</div>
+                    <p>Assessed ARPU trends for Internet Combo Plans, revealing a 15% growth. Directed comparative analysis of pre/post-5G metrics, uncovering a 1.99% churn rate rise and 8.28% drop in active users to guide strategic retention initiatives.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/devraj-mondal" target="_blank">View GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>FMCG Consumer Goods Analysis</h3>
+                    <div class="project-tech">SQL • MYSQL • POWER BI</div>
+                    <p>Expedited manufacturing process improvements, raising efficiency by 30% and cutting production errors by 25%. Pinpointed cost inefficiencies enabling a 10% reduction in operational expenses through targeted recommendations.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/devraj-mondal" target="_blank">View GitHub</a>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <h3>Hospitality Revenue Tracking</h3>
+                    <div class="project-tech">EXCEL • POWER BI • DAX</div>
+                    <p>Customized a Power BI dashboard using 3 months of booking data to identify factors contributing to declined market share. Generated actionable recommendations for the Revenue Team, achieving a 10% increase in customer base within 6 months.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/devraj-mondal" target="_blank">View GitHub</a>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Based in Gurgaon, India • +91-6296929668</p>
+            <p>© 2026 Devraj Mondal. Built and deployed via GitHub Pages.</p>
+        </div>
+    </footer>
+
+</body>
+</html>
