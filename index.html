@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
     
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    
     <style>
         /* Modern CSS Variables & Theme */
         :root {
@@ -24,7 +26,7 @@
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         
-        html { scroll-behavior: smooth; }
+        html { scroll-behavior: smooth; overflow-x: hidden; }
         
         body {
             background-color: var(--bg-dark);
@@ -32,6 +34,7 @@
             font-family: var(--font-sans);
             line-height: 1.6;
             -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
         }
 
         /* Glassmorphism Navbar */
@@ -93,9 +96,9 @@
         /* Profile Image Styles */
         .about-pic { position: relative; max-width: 300px; margin: 0 auto; width: 100%; }
         .image-wrapper { position: relative; border-radius: 8px; display: block; }
-        .image-wrapper img { width: 100%; border-radius: 8px; position: relative; z-index: 1; transition: var(--transition); box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7); }
+        .image-wrapper img { width: 100%; border-radius: 8px; position: relative; z-index: 1; transition: var(--transition); box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7); filter: grayscale(100%) contrast(1); }
         .image-wrapper::after { content: ""; position: absolute; width: 100%; height: 100%; border: 2px solid var(--accent); border-radius: 8px; top: 20px; left: 20px; z-index: 0; transition: var(--transition); }
-        .image-wrapper:hover img { transform: translate(-5px, -5px); }
+        .image-wrapper:hover img { transform: translate(-5px, -5px); filter: none; }
         .image-wrapper:hover::after { transform: translate(5px, 5px); }
 
         /* Skill Tags */
@@ -130,7 +133,7 @@
 
         @media (max-width: 768px) {
             nav { padding: 20px; }
-            nav .nav-links { display: none; } /* Simplified for mobile */
+            nav .nav-links { display: none; }
             .about-content { grid-template-columns: 1fr; gap: 40px; }
             .section-heading::after { width: 100%; }
         }
@@ -138,7 +141,7 @@
 </head>
 <body>
 
-    <nav>
+    <nav data-aos="fade-down" data-aos-duration="1000">
         <a href="#" class="logo">DM.</a>
         <ul class="nav-links">
             <li><a href="#about">About</a></li>
@@ -149,7 +152,7 @@
 
     <div class="container">
         
-        <section id="hero">
+        <section id="hero" data-aos="fade-up" data-aos-duration="1000">
             <h4>Hi, my name is</h4>
             <h1>Devraj Mondal.</h1>
             <h2>I engineer data-driven solutions.</h2>
@@ -161,15 +164,15 @@
         </section>
 
         <section id="about">
-            <h2 class="section-heading">About Me</h2>
+            <h2 class="section-heading" data-aos="fade-right">About Me</h2>
             <div class="about-content">
-                <div class="about-text">
+                <div class="about-text" data-aos="fade-up" data-aos-delay="200">
                     <p>I am a data-driven professional with a B.Tech in Computer Science from Haldia Institute of Technology (CGPA: 8.53).</p>
                     <p>With an analytical mindset, my goal is to uncover the stories hidden within data to solve organizational challenges and drive strategic decision-making in the modern economic landscape. I have successfully developed enterprise dashboards, reduced operational redundancies, and provided insights that directly impact revenue.</p>
                     
                     <p style="margin-top: 20px; font-family: var(--font-mono); color: var(--accent); font-size: 0.9rem;">Here are a few technologies I've been working with recently:</p>
                     <div class="skills-wrapper">
-                        <span class="skill-tag">Power BI Desktop & Service</span>
+                        <span class="skill-tag">Power BI</span>
                         <span class="skill-tag">SQL & MySQL</span>
                         <span class="skill-tag">Advanced Excel</span>
                         <span class="skill-tag">DAX & M-Query</span>
@@ -178,7 +181,7 @@
                     </div>
                 </div>
                 
-                <div class="about-pic">
+                <div class="about-pic" data-aos="zoom-in" data-aos-delay="400">
                     <div class="image-wrapper">
                         <img src="profile.jpeg" alt="Devraj Mondal">
                     </div>
@@ -187,9 +190,9 @@
         </section>
 
         <section id="experience">
-            <h2 class="section-heading">Where I've Worked</h2>
+            <h2 class="section-heading" data-aos="fade-right">Where I've Worked</h2>
             
-            <div class="job-card">
+            <div class="job-card" data-aos="fade-up">
                 <div class="job-header">
                     <span class="job-title">Associate Engineer <span class="job-company">@ Nagarro</span></span>
                     <span class="job-date">September 2022 - September 2023</span>
@@ -200,7 +203,7 @@
                 </ul>
             </div>
 
-            <div class="job-card" style="margin-top: 40px;">
+            <div class="job-card" style="margin-top: 40px;" data-aos="fade-up" data-aos-delay="200">
                 <div class="job-header">
                     <span class="job-title">Professional Certifications <span class="job-company">@ Codebasics</span></span>
                 </div>
@@ -213,10 +216,10 @@
         </section>
 
         <section id="projects">
-            <h2 class="section-heading">Some Things I've Built</h2>
+            <h2 class="section-heading" data-aos="fade-right">Some Things I've Built</h2>
             <div class="projects-grid">
                 
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="100">
                     <div class="folder-icon">📊</div>
                     <h3 class="project-title">Business Insights 360</h3>
                     <p class="project-desc">Engineered an enterprise-wide Power BI dashboard for 5 major departments, integrating 1M+ records. Optimized with DAX Studio, lowering storage by 30%.</p>
@@ -225,7 +228,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="200">
                     <div class="folder-icon">📈</div>
                     <h3 class="project-title">Atliq Sales Analytics</h3>
                     <p class="project-desc">Developed a Sales Analytics Report delivering 25% more flexible calculations. Automated data cleaning with Power Query, reducing manual effort by 4 hours per cycle.</p>
@@ -234,7 +237,7 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="300">
                     <div class="folder-icon">📶</div>
                     <h3 class="project-title">Telecom 5G Insights</h3>
                     <p class="project-desc">Assessed ARPU trends for Internet Combo Plans. Directed comparative analysis of pre/post-5G metrics to guide strategic retention initiatives.</p>
@@ -243,21 +246,12 @@
                     </div>
                 </div>
 
-                <div class="project-card">
+                <div class="project-card" data-aos="fade-up" data-aos-delay="400">
                     <div class="folder-icon">🛒</div>
                     <h3 class="project-title">FMCG Goods Analysis</h3>
                     <p class="project-desc">Expedited manufacturing process improvements, raising efficiency by 30%. Pinpointed cost inefficiencies enabling a 10% reduction in OPEX.</p>
                     <div class="project-tech">
                         <span>MySQL</span> <span>Power BI</span>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="folder-icon">🏨</div>
-                    <h3 class="project-title">Hospitality Revenue</h3>
-                    <p class="project-desc">Customized a dashboard using 3 months of booking data to identify factors contributing to declined market share. Achieved a 10% increase in customer base.</p>
-                    <div class="project-tech">
-                        <span>Power BI</span> <span>DAX</span>
                     </div>
                 </div>
 
@@ -271,5 +265,13 @@
         <p>Deployed securely via <a href="https://github.com/devraj-mondal" target="_blank">GitHub Pages</a>.</p>
     </footer>
 
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({
+            duration: 800,
+            once: true,
+            offset: 100
+        });
+    </script>
 </body>
 </html>
