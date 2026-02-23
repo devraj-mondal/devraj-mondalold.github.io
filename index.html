@@ -87,9 +87,17 @@
         body { counter-reset: section; }
 
         /* About Section */
-        .about-content { display: grid; grid-template-columns: 3fr 2fr; gap: 50px; }
+        .about-content { display: grid; grid-template-columns: 3fr 2fr; gap: 50px; align-items: center; }
         .about-text p { color: var(--text-muted); margin-bottom: 15px; font-size: 1.05rem; }
         
+        /* Profile Image Styles */
+        .about-pic { position: relative; max-width: 300px; margin: 0 auto; width: 100%; }
+        .image-wrapper { position: relative; border-radius: 8px; display: block; }
+        .image-wrapper img { width: 100%; border-radius: 8px; position: relative; z-index: 1; transition: var(--transition); box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7); }
+        .image-wrapper::after { content: ""; position: absolute; width: 100%; height: 100%; border: 2px solid var(--accent); border-radius: 8px; top: 20px; left: 20px; z-index: 0; transition: var(--transition); }
+        .image-wrapper:hover img { transform: translate(-5px, -5px); }
+        .image-wrapper:hover::after { transform: translate(5px, 5px); }
+
         /* Skill Tags */
         .skills-wrapper { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 20px; }
         .skill-tag { background: var(--bg-light); color: var(--accent); font-family: var(--font-mono); font-size: 0.85rem; padding: 8px 15px; border-radius: 20px; border: 1px solid var(--bg-lightest); transition: var(--transition); }
@@ -123,7 +131,7 @@
         @media (max-width: 768px) {
             nav { padding: 20px; }
             nav .nav-links { display: none; } /* Simplified for mobile */
-            .about-content { grid-template-columns: 1fr; }
+            .about-content { grid-template-columns: 1fr; gap: 40px; }
             .section-heading::after { width: 100%; }
         }
     </style>
@@ -167,6 +175,12 @@
                         <span class="skill-tag">DAX & M-Query</span>
                         <span class="skill-tag">Python</span>
                         <span class="skill-tag">Data Modelling</span>
+                    </div>
+                </div>
+                
+                <div class="about-pic">
+                    <div class="image-wrapper">
+                        <img src="profile.jpg" alt="Devraj Mondal">
                     </div>
                 </div>
             </div>
