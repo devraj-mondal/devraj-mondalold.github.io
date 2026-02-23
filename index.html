@@ -3,57 +3,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Devraj Mondal | Data Analyst Portfolio</title>
+    <title>Devraj Mondal | Data Analyst</title>
     <style>
+        /* GitHub Dark Mode Color Palette */
         :root {
-            --primary: #2563eb;
-            --text-main: #1e293b;
-            --text-muted: #64748b;
-            --bg-light: #f8fafc;
-            --card-bg: #ffffff;
+            --bg-main: #0d1117;
+            --bg-card: #161b22;
+            --bg-card-hover: #1f242c;
+            --text-main: #c9d1d9;
+            --text-muted: #8b949e;
+            --primary: #58a6ff;
+            --btn-bg: #238636;
+            --btn-border: #1a6327;
+            --btn-hover: #2ea043;
+            --border-color: #30363d;
         }
-        * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
-        body { background-color: var(--bg-light); color: var(--text-main); line-height: 1.6; }
+
+        * { box-sizing: border-box; margin: 0; padding: 0; font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif; }
+        
+        body { background-color: var(--bg-main); color: var(--text-main); line-height: 1.6; }
         .container { max-width: 1000px; margin: 0 auto; padding: 0 20px; }
         
         /* Typography & Links */
-        h1, h2, h3 { color: #0f172a; margin-bottom: 10px; }
-        a { color: var(--primary); text-decoration: none; font-weight: 500; }
+        h1, h2, h3 { color: #f0f6fc; margin-bottom: 10px; font-weight: 600; }
+        a { color: var(--primary); text-decoration: none; font-weight: 500; transition: color 0.2s; }
         a:hover { text-decoration: underline; }
         
         /* Header / Hero Section */
-        header { padding: 80px 0 50px; border-bottom: 1px solid #e2e8f0; text-align: center; }
-        header h1 { font-size: 2.5rem; letter-spacing: -0.5px; }
-        header p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 20px; }
-        .social-links a { margin: 0 10px; padding: 8px 16px; border: 1px solid var(--primary); border-radius: 5px; display: inline-block; transition: 0.3s; }
-        .social-links a:hover { background: var(--primary); color: white; text-decoration: none; }
+        header { padding: 80px 0 50px; border-bottom: 1px solid var(--border-color); text-align: center; }
+        header h1 { font-size: 2.8rem; letter-spacing: -0.5px; }
+        header p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 25px; }
+        
+        /* 3D Dynamic Buttons */
+        .btn-container { display: flex; justify-content: center; gap: 15px; flex-wrap: wrap; }
+        .btn-3d { 
+            background-color: var(--btn-bg); 
+            color: #ffffff !important; 
+            padding: 10px 20px; 
+            border-radius: 6px; 
+            border: 1px solid rgba(240, 246, 252, 0.1);
+            border-bottom: 4px solid var(--btn-border);
+            font-weight: 600;
+            display: inline-block; 
+            transition: all 0.1s ease-in-out;
+            text-decoration: none !important;
+        }
+        .btn-3d:hover {
+            background-color: var(--btn-hover);
+        }
+        .btn-3d:active {
+            transform: translateY(3px);
+            border-bottom: 1px solid var(--btn-border);
+            margin-bottom: 3px;
+        }
+
+        .btn-outline {
+            background-color: transparent;
+            color: var(--text-main) !important;
+            border: 1px solid var(--border-color);
+            border-bottom: 4px solid #21262d;
+        }
+        .btn-outline:hover { background-color: #21262d; border-color: #8b949e; }
+        .btn-outline:active { border-bottom: 1px solid #21262d; }
 
         /* Sections */
-        section { padding: 50px 0; border-bottom: 1px solid #e2e8f0; }
-        section h2 { font-size: 1.8rem; margin-bottom: 30px; border-left: 4px solid var(--primary); padding-left: 10px; }
+        section { padding: 60px 0; border-bottom: 1px solid var(--border-color); }
+        section h2 { font-size: 1.8rem; margin-bottom: 30px; display: flex; align-items: center; gap: 10px; }
+        section h2::before { content: "/>"; color: var(--primary); font-family: monospace; font-weight: bold; }
 
         /* Skills Grid */
         .skills-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; }
-        .skill-category { background: var(--card-bg); padding: 20px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); }
-        .skill-category h3 { font-size: 1.1rem; border-bottom: 1px solid #e2e8f0; padding-bottom: 10px; margin-bottom: 10px; }
+        .skill-category { background: var(--bg-card); padding: 25px; border-radius: 8px; border: 1px solid var(--border-color); }
+        .skill-category h3 { font-size: 1.1rem; border-bottom: 1px solid var(--border-color); padding-bottom: 10px; margin-bottom: 15px; }
         .skill-category ul { list-style-type: none; }
-        .skill-category li { margin-bottom: 5px; color: var(--text-muted); }
-        .skill-category li::before { content: "• "; color: var(--primary); font-weight: bold; }
+        .skill-category li { margin-bottom: 8px; color: var(--text-muted); display: flex; align-items: center; gap: 8px; }
+        .skill-category li::before { content: "▹"; color: var(--primary); font-size: 1.2rem; }
 
-        /* Experience & Education */
-        .timeline-item { background: var(--card-bg); padding: 25px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); margin-bottom: 20px; }
+        /* Experience, Education & Certifications */
+        .timeline-item { background: var(--bg-card); padding: 25px; border-radius: 8px; border: 1px solid var(--border-color); margin-bottom: 20px; transition: transform 0.2s; }
+        .timeline-item:hover { transform: translateX(5px); border-color: var(--text-muted); }
         .timeline-header { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 15px; flex-wrap: wrap; }
-        .timeline-header h3 { margin: 0; }
-        .date { color: var(--text-muted); font-size: 0.9rem; font-weight: 500; }
+        .timeline-header h3 { margin: 0; color: #f0f6fc; }
+        .date { color: var(--text-muted); font-size: 0.9rem; font-family: monospace; }
         .timeline-item ul { margin-left: 20px; color: var(--text-muted); }
-        .timeline-item li { margin-bottom: 8px; }
+        .timeline-item li { margin-bottom: 10px; }
 
         /* Projects Grid */
         .projects-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 25px; }
-        .project-card { background: var(--card-bg); padding: 25px; border-radius: 8px; box-shadow: 0 1px 3px rgba(0,0,0,0.1); display: flex; flex-direction: column; }
-        .project-tech { font-size: 0.8rem; color: var(--primary); font-weight: bold; margin-bottom: 15px; letter-spacing: 0.5px; }
+        .project-card { background: var(--bg-card); padding: 25px; border-radius: 8px; border: 1px solid var(--border-color); display: flex; flex-direction: column; transition: all 0.3s ease; }
+        .project-card:hover { transform: translateY(-5px); border-color: var(--primary); box-shadow: 0 8px 24px rgba(0,0,0,0.4); background-color: var(--bg-card-hover); }
+        .project-tech { font-size: 0.8rem; color: var(--primary); font-family: monospace; font-weight: bold; margin-bottom: 15px; }
         .project-card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 20px; flex-grow: 1; }
-        .project-links a { margin-right: 15px; font-size: 0.9rem; }
 
         /* Footer */
         footer { padding: 40px 0; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
@@ -65,10 +105,10 @@
         <div class="container">
             <h1>Devraj Mondal</h1>
             <p>Data Analyst & Business Intelligence Professional</p>
-            <div class="social-links">
-                <a href="https://www.linkedin.com/in/devrajmondal5/" target="_blank">LinkedIn</a>
-                <a href="https://github.com/devraj-mondal" target="_blank">GitHub</a>
-                <a href="mailto:mondaldevraj996@gmail.com">Contact Me</a>
+            <div class="btn-container">
+                <a href="https://github.com/devraj-mondal" target="_blank" class="btn-3d btn-outline">View GitHub</a>
+                <a href="https://www.linkedin.com/in/devrajmondal5/" target="_blank" class="btn-3d">Connect on LinkedIn</a>
+                <a href="mailto:mondaldevraj996@gmail.com" class="btn-3d btn-outline">Email Me</a>
             </div>
         </div>
     </header>
@@ -76,17 +116,18 @@
     <div class="container">
         
         <section id="about">
-            <h2>About Me</h2>
+            <h2>About</h2>
             <p>I am a data-driven professional with a B.Tech in Computer Science from Haldia Institute of Technology (CGPA: 8.53). I specialize in transforming complex datasets into clear, actionable business strategies using Power BI, SQL, and Advanced Excel. With an analytical mindset, I aim to uncover the stories hidden within data to solve organizational challenges, optimize operational efficiency, and drive strategic decision-making in the modern economic landscape.</p>
         </section>
 
         <section id="skills">
-            <h2>Technical Core Competencies</h2>
+            <h2>Technical Skills</h2>
             <div class="skills-grid">
                 <div class="skill-category">
                     <h3>Data Visualization</h3>
                     <ul>
-                        <li>Power BI Desktop & Service</li>
+                        <li>Power BI Desktop</li>
+                        <li>Power BI Service</li>
                         <li>Advanced Excel</li>
                         <li>Data Storytelling</li>
                     </ul>
@@ -96,23 +137,22 @@
                     <ul>
                         <li>SQL & MySQL</li>
                         <li>Power Query (M-Query)</li>
-                        <li>DAX</li>
-                        <li>Data Cleaning & Modelling</li>
+                        <li>Data Modelling</li>
+                        <li>Data Cleaning</li>
                     </ul>
                 </div>
                 <div class="skill-category">
-                    <h3>Programming</h3>
+                    <h3>Programming & Logic</h3>
                     <ul>
                         <li>Python</li>
-                        <li>PHP</li>
-                        <li>CSS & HTML</li>
+                        <li>DAX</li>
                     </ul>
                 </div>
             </div>
         </section>
 
         <section id="experience">
-            <h2>Professional Experience</h2>
+            <h2>Experience</h2>
             <div class="timeline-item">
                 <div class="timeline-header">
                     <div>
@@ -133,41 +173,46 @@
             <div class="projects-grid">
                 
                 <div class="project-card">
-                    <h3>Business Insights 360 (E-Commerce)</h3>
+                    <h3>Business Insights 360</h3>
                     <div class="project-tech">POWER BI • SQL • DAX • EXCEL</div>
-                    <p>Engineered an enterprise-wide Power BI dashboard for Sales, Finance, Supply Chain, Executive, and Marketing teams, integrating 1M+ records. Optimized performance with DAX Studio, lowering storage by 30% and augmenting speed by 5%. Drove insights leading to a projected 10% revenue uplift.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/devraj-mondal" target="_blank">View GitHub</a>
-                    </div>
+                    <p>Engineered an enterprise-wide Power BI dashboard for Sales, Finance, Supply Chain, Executive, and Marketing teams, integrating 1M+ records. Optimized performance with DAX Studio, lowering storage by 30% and augmenting speed by 5%.</p>
+                </div>
+
+                <div class="project-card">
+                    <h3>Atliq Sales Analytics</h3>
+                    <div class="project-tech">ADV. EXCEL • POWER QUERY • PIVOT TABLES</div>
+                    <p>Developed a Sales Analytics Report delivering 25% more flexible calculations. Automated data cleaning with Power Query, reducing manual effort by 4 hours per cycle, and boosted process efficiency by 30%.</p>
                 </div>
 
                 <div class="project-card">
                     <h3>Telecom 5G Insights</h3>
                     <div class="project-tech">EXCEL • POWER BI • DAX</div>
-                    <p>Assessed ARPU trends for Internet Combo Plans, revealing a 15% growth. Directed comparative analysis of pre/post-5G metrics, uncovering a 1.99% churn rate rise and 8.28% drop in active users to guide strategic retention initiatives.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/devraj-mondal" target="_blank">View GitHub</a>
-                    </div>
+                    <p>Assessed ARPU trends for Internet Combo Plans, revealing 15% growth. Directed comparative analysis of pre/post-5G metrics, uncovering a 1.99% churn rate rise to guide strategic retention initiatives.</p>
                 </div>
 
                 <div class="project-card">
-                    <h3>FMCG Consumer Goods Analysis</h3>
+                    <h3>FMCG Consumer Goods</h3>
                     <div class="project-tech">SQL • MYSQL • POWER BI</div>
-                    <p>Expedited manufacturing process improvements, raising efficiency by 30% and cutting production errors by 25%. Pinpointed cost inefficiencies enabling a 10% reduction in operational expenses through targeted recommendations.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/devraj-mondal" target="_blank">View GitHub</a>
-                    </div>
+                    <p>Expedited manufacturing process improvements, raising efficiency by 30% and cutting production errors by 25%. Pinpointed cost inefficiencies enabling a 10% reduction in operational expenses.</p>
                 </div>
 
                 <div class="project-card">
                     <h3>Hospitality Revenue Tracking</h3>
                     <div class="project-tech">EXCEL • POWER BI • DAX</div>
-                    <p>Customized a Power BI dashboard using 3 months of booking data to identify factors contributing to declined market share. Generated actionable recommendations for the Revenue Team, achieving a 10% increase in customer base within 6 months.</p>
-                    <div class="project-links">
-                        <a href="https://github.com/devraj-mondal" target="_blank">View GitHub</a>
-                    </div>
+                    <p>Customized a Power BI dashboard using 3 months of booking data to identify factors contributing to declined market share. Generated actionable recommendations, achieving a 10% increase in customer base within 6 months.</p>
                 </div>
 
+            </div>
+        </section>
+
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="timeline-item" style="padding: 20px;">
+                <ul style="list-style-type: none; margin-left: 0;">
+                    <li><span style="color: var(--primary)">▹</span> <strong>Excel: Mother of Business Intelligence</strong> — Codebasics</li>
+                    <li><span style="color: var(--primary)">▹</span> <strong>Power BI Data Analytics For All Levels 3.0</strong> — Codebasics</li>
+                    <li><span style="color: var(--primary)">▹</span> <strong>SQL Beginner to Advanced</strong> — Codebasics</li>
+                </ul>
             </div>
         </section>
 
@@ -175,8 +220,8 @@
 
     <footer>
         <div class="container">
-            <p>Based in Gurgaon, India • +91-6296929668</p>
-            <p>© 2026 Devraj Mondal. Built and deployed via GitHub Pages.</p>
+            <p>Based in Gurgaon, India</p>
+            <p style="margin-top: 10px;">© 2026 Devraj Mondal. Built & Deployed via GitHub Pages.</p>
         </div>
     </footer>
 
